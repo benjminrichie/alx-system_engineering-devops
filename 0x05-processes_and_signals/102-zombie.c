@@ -1,4 +1,4 @@
-i/*
+/*
  * File: 102-zombie.c
  * Auth: Brennan D Baraban
  */
