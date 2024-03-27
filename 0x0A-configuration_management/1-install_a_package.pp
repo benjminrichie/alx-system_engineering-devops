@@ -1,6 +1,4 @@
-# This installs the package puppet-lint
-
-package { 'flask':
-  ensure   => '2.1.0',
-  provider => 'pip3'
+# Use Puppet to install a puppet-lint
+exec {'sudo gem install puppet-lint -v 2.5.0':
+  path => '/usr/bin',
 }
