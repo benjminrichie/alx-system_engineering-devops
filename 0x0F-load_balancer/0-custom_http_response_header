@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# To duplicate web-01 to web-02
-# The script is an upgrade from the web-server
+# duplicate web-01 to web-02
+# these scripts are an upgrade from the web-server scripts...
 
 # uncomment to see the script run in action
 #set -x
@@ -82,4 +82,3 @@ if [ "$(pgrep -c nginx)" -le 0 ]; then
 else
 	sudo service nginx restart
 fi
-
