@@ -33,19 +33,19 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend benjminrichie-frontend
+frontend benjminrichie.tech-frontend
         bind *:80
         mode http
         http-request redirect scheme https code 301 unless { ssl_fc }
         http-request set-header X_Forwarded-Proto http
-        default_backend benjminrichie-backend
+        default_backend benjminrichie.tech-backend
 
-frontend benjminrichie-frontend-https
+frontend benjminrichie.tech-frontend-https
         bind *:443 ssl crt /etc/haproxy/certs/www.benjminrichie.tech.pem
         http-request set-header X-Forwarded-Proto https
-        default_backend benjminrichie-backend
+        default_backend benjminrichie.tech-backend
 
-backend benjminrichie-backend
+backend benjminrichie.tech-backend
         balance roundrobin
         server 176189-web-01 54.90.44.208:80 check
         server 176189-web-02 100.25.197.147:80 check
