@@ -8,11 +8,11 @@ global
         group haproxy
         daemon
 
-        # myDefault SSL material location
+        # Default SSL material locations
         ca-base /etc/ssl/certs
         crt-base /etc/ssl/private
 
-        # Ref: https://ssl-config.mozilla.org/#server=haproxy&server-version=2.0.3&config=intermediate
+        # view: https://ssl-config.mozilla.org/#server=haproxy&server-version=2.0.3&config=intermediate
         ssl-default-bind-ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-S>
         ssl-default-bind-ciphersuites TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256
         ssl-default-bind-options ssl-min-ver TLSv1.2 no-tls-tickets
@@ -41,11 +41,11 @@ frontend benjminrichie-frontend
         default_backend benjminrichie-backend
 
 frontend benjminrichie-frontend-https
-        bind *:443 ssl crt /etc/haproxy/certs/benjminrichie.tech.pem
+        bind *:443 ssl crt /etc/haproxy/certs/www.benjminrichie.tech.pem
         http-request set-header X-Forwarded-Proto https
         default_backend benjminrichie-backend
 
 backend benjminrichie-backend
         balance roundrobin
-        server 151666-web-01 100.25.190.21:80 check
-        server 151666-web-02 54.160.77.90:80 check
+        server 176189-web-01 54.90.44.208:80 check
+        server 176189-web-02 100.25.197.147:80 check

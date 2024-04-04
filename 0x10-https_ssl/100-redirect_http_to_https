@@ -41,11 +41,11 @@ frontend benjminrichie-frontend
         default_backend benjminrichie-backend
 
 frontend benjminrichie-frontend-https
-        bind *:443 ssl crt /etc/haproxy/certs/benjminrichie.tech.pem
+        bind *:443 ssl crt /etc/haproxy/certs/www.benjminrichie.tech.pem
         http-request set-header X-Forwarded-Proto https
         default_backend benjminrichie-backend
 
-backend benjminrichie-tech-backend
+backend benjminrichie-backend
         balance roundrobin
         server 176189-web-01 54.90.44.208:80 check
         server 176189-web-02 100.25.197.147:80 check
