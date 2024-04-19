@@ -11,15 +11,15 @@ sudo apt-get -y install haproxy
 
 # Configure HAProxy
 server_config="
-frontend myrobert.tech-frontend
+frontend benjminrichie.tech-frontend
     bind *:80
     mode http
-    default_backend myrobert.tech-backend
+    default_backend benjminrichie.tech-backend
 
-backend myrobert.tech-backend
+backend benjminrichie.tech-backend
     balance roundrobin
-    server 45099-web-01 54.173.104.114:80 check
-    server 45099-web-02 34.227.94.64:80 check
+    server 176189-web-01 54.144.131.105:80 check
+    server 176189-web-02 54.157.173.202:80 check
 "
 
 echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
