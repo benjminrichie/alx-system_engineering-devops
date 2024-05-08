@@ -24,3 +24,12 @@ def number_of_subscribers(subreddit):
     else:
         # If the subreddit is invalid, return 0
         return 0
+
+# Test the function
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) < 2:
+        print("Please pass an argument for the subreddit to search.")
+    else:
+        subreddit = sys.argv[1]
+        print("{:d}".format(number_of_subscribers(subreddit)))
