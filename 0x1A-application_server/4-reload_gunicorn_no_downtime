@@ -1,9 +1,4 @@
 #!/usr/bin/env bash
 # Gracefully reloads Gunicorn
-pids=$(pgrep gunicorn)
-if [ -z "$pids" ]; then
-  echo "OK" # Output OK even if no processes are found
-else
-  echo "$pids" | xargs kill -HUP
-  echo "OK" # Output OK after sending the signal
-fi
+pgrep gunicorn | xargs kill -HUP
+
